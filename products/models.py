@@ -11,7 +11,7 @@ class Menu(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=20)
     menu = models.ForeignKey('Menu', on_delete=models.CASCADE)
-    
+
     class Meta:
         db_table = 'categories'
 
@@ -44,7 +44,7 @@ class Nutrition(models.Model):
     protein_g = models.DecimalField(max_digits=5, decimal_places=1)
     caffeine_mg = models.DecimalField(max_digits=5, decimal_places=1)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    
+
     class Meta:
         db_table = 'nutritions'
 
@@ -52,7 +52,7 @@ class Nutrition(models.Model):
 class Image(models.Model):
     image_url = models.URLField(max_length=200)
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    
+
     class Meta:
         db_table = 'images'
 
